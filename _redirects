@@ -1,0 +1,2 @@
+# Redirect www to apex
+https://www.agentrig.io/* https://agentrig.io/:splat 301

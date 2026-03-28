@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Rig — Real-Time Freight Fraud Detection</title>
+    <meta name="description" content="AI-powered freight fraud detection that verifies carriers in real-time. Protect your brokerage from identity theft, cargo fraud, and double brokering." />
+    <meta name="keywords" content="freight fraud detection, carrier verification, freight broker security, cargo theft prevention, carrier identity verification" />
+    <meta property="og:title" content="Agent Rig — Real-Time Freight Fraud Detection" />
+    <meta property="og:description" content="AI-powered platform that verifies carriers in real-time to protect brokers and shippers from fraud, theft, and identity manipulation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agentrig.io" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Agent Rig — Real-Time Freight Fraud Detection" />
+    <meta name="twitter:description" content="Stop freight fraud before it moves. AI-powered carrier verification for freight brokers." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f172a'/%3E%3Cpath d='M8 22L16 8l8 14H8z' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='18' r='2' fill='%2338bdf8'/%3E%3C/svg%3E" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: { 50: '#f0f4ff', 100: '#dbe4ff', 200: '#bac8ff', 300: '#91a7ff', 400: '#748ffc', 500: '#5c7cfa', 600: '#4c6ef5', 700: '#4263eb', 800: '#3b5bdb', 900: '#364fc7' },
+                        surface: { 50: '#f8fafc', 100: '#f1f5f9', 800: '#1e293b', 900: '#0f172a', 950: '#020617' },
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
+                        sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+        body { background: #020617; }
+        .glow { box-shadow: 0 0 40px -12px rgba(56, 189, 248, 0.15); }
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+            background-size: 64px 64px;
+        }
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+        .fade-in-delay { animation: fadeIn 0.8s ease-out 0.2s forwards; opacity: 0; }
+        .fade-in-delay-2 { animation: fadeIn 0.8s ease-out 0.4s forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; } }
+        @keyframes pulse-slow { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+        .pulse-dot { animation: pulse-slow 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-surface-950 text-slate-300 font-sans antialiased">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-800/50 bg-surface-950/80 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+                    <path d="M8 22L16 8l8 14H8z" stroke="#38bdf8" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                    <circle cx="16" cy="18" r="2" fill="#38bdf8"/>
+                </svg>
+                <span class="font-mono font-bold text-white tracking-tight text-lg">AGENT RIG</span>
+            </div>
+            <a href="mailto:admin@agentrig.io"
+               class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-sky-400 border border-sky-400/30 rounded-lg hover:bg-sky-400/10 transition-colors">
+                Get in Touch
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center grid-bg overflow-hidden">
+        <!-- Abstract geometric accent -->
+        <div class="absolute top-1/4 right-0 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-1/4 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 pt-32 pb-20">
+            <div class="max-w-3xl">
+                <div class="fade-in">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-sky-400/20 bg-sky-400/5 mb-8">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span>
+                        <span class="text-xs font-mono text-sky-400 tracking-wide">REAL-TIME DETECTION ACTIVE</span>
+                    </div>
+                </div>
+
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight fade-in">
+                    Stop Freight Fraud<br/>
+                    <span class="text-sky-400">Before It Moves</span>
+                </h1>
+
+                <p class="mt-6 text-lg sm:text-xl text-slate-400 leading-relaxed max-w-xl fade-in-delay">
+                    AI-powered carrier verification that protects brokers and shippers from identity theft, cargo fraud, and account takeover — in seconds, not hours.
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 fade-in-delay-2">
+                    <a href="mailto:admin@agentrig.io"
+                       class="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold text-surface-950 bg-sky-400 rounded-lg hover:bg-sky-300 transition-colors">
+                        Request Early Access
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                    <a href="#how-it-works"
+                       class="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold text-slate-300 border border-slate-700 rounded-lg hover:border-slate-500 hover:text-white transition-colors">
+                        How It Works
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="py-24 border-t border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mb-16">
+                <p class="font-mono text-xs tracking-widest text-sky-400 mb-4">THE PROBLEM</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight">
+                    Freight fraud is a<br/>
+                    <span class="text-red-400">$35 billion problem</span>
+                </h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="group p-6 rounded-xl border border-slate-800 hover:border-slate-700 bg-surface-900/50 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 15.75h.007v.008H12v-.008z"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Billions lost annually</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Cargo theft and freight fraud cost the industry billions every year, with incidents surging 1,500% since 2021.</p>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-slate-800 hover:border-slate-700 bg-surface-900/50 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Identity theft is surging</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Carrier identity hijacking and account takeovers have become the primary attack vector, bypassing traditional FMCSA checks.</p>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-slate-800 hover:border-slate-700 bg-surface-900/50 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Stale, single-source data</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Traditional compliance tools check one database and return a green light. Fraudsters learned to game that system years ago.</p>
+                </div>
+
+                <div class="group p-6 rounded-xl border border-slate-800 hover:border-slate-700 bg-surface-900/50 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Fraudsters adapt faster</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Static compliance checks can't keep up with evolving tactics — from patient chameleon carriers to AI-generated fake identities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section id="how-it-works" class="py-24 border-t border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mb-16">
+                <p class="font-mono text-xs tracking-widest text-sky-400 mb-4">WHAT WE DO</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight">
+                    We verify who carriers<br/>
+                    <span class="text-sky-400">say they are</span>
+                </h2>
+                <p class="mt-4 text-slate-400 leading-relaxed">
+                    Not just what databases say about them. Agent Rig cross-references multiple authoritative sources in real-time and applies AI reasoning to every verification.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-xl border border-slate-800 bg-surface-900/50 glow">
+                    <div class="font-mono text-xs text-sky-400 tracking-wider mb-3">01</div>
+                    <h3 class="font-semibold text-white mb-2">Multi-Source Intelligence</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Cross-referencing data from multiple authoritative sources simultaneously. No single point of failure.</p>
+                </div>
+
+                <div class="p-6 rounded-xl border border-slate-800 bg-surface-900/50 glow">
+                    <div class="font-mono text-xs text-sky-400 tracking-wider mb-3">02</div>
+                    <h3 class="font-semibold text-white mb-2">Identity Verification</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">We go beyond standard compliance checks to verify that the person behind the booking is who they claim to be.</p>
+                </div>
+
+                <div class="p-6 rounded-xl border border-slate-800 bg-surface-900/50 glow">
+                    <div class="font-mono text-xs text-sky-400 tracking-wider mb-3">03</div>
+                    <h3 class="font-semibold text-white mb-2">AI-Powered Analysis</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Not just scores. Intelligent investigation that explains what it found and tells you exactly what to do about it.</p>
+                </div>
+
+                <div class="p-6 rounded-xl border border-slate-800 bg-surface-900/50 glow">
+                    <div class="font-mono text-xs text-sky-400 tracking-wider mb-3">04</div>
+                    <h3 class="font-semibold text-white mb-2">Seconds, Not Hours</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Full carrier verification in real-time. Get actionable intelligence before you release the load, not after it's gone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Built Different -->
+    <section class="py-24 border-t border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-700 bg-surface-900/50 mb-8">
+                    <span class="font-mono text-xs tracking-widest text-slate-400">BUILT DIFFERENT</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                    Every other tool gives you a score.<br/>
+                    <span class="text-sky-400">We give you an investigation.</span>
+                </h2>
+
+                <p class="mt-6 text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                    We don't just check boxes. Agent Rig thinks like the fraudsters do — analyzing patterns across identity, infrastructure, behavior, and physical presence to find what rule-based systems miss.
+                </p>
+
+                <div class="mt-12 p-8 rounded-xl border border-slate-800 bg-surface-900/50 text-left max-w-2xl mx-auto glow">
+                    <div class="font-mono text-xs text-slate-500 mb-4">SAMPLE OUTPUT</div>
+                    <p class="text-sm text-slate-300 leading-relaxed font-mono">
+                        <span class="text-red-400 font-bold">REJECT</span> &mdash; <span class="text-slate-400">Score: 100/100</span><br/><br/>
+                        <span class="text-slate-200">"This carrier registered authority 5 years ago but has never moved a single load — zero inspections, zero trucks, zero drivers. The dispatch email fails verification. The phone number has a critical fraud score. The registered address is a virtual office shared by 20 other carriers. This is a dormant shell being activated for fraud."</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 border-t border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to stop freight fraud?</h2>
+            <p class="text-slate-400 mb-10 max-w-lg mx-auto">Agent Rig is currently in early access. Reach out to learn how we can protect your brokerage.</p>
+            <a href="mailto:admin@agentrig.io"
+               class="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-surface-950 bg-sky-400 rounded-lg hover:bg-sky-300 transition-colors">
+                admin@agentrig.io
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+                    <path d="M8 22L16 8l8 14H8z" stroke="#38bdf8" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                    <circle cx="16" cy="18" r="2" fill="#38bdf8"/>
+                </svg>
+                <span class="font-mono text-sm text-slate-500">Agent Rig</span>
+            </div>
+            <div class="text-sm text-slate-600">
+                &copy; 2026 Agent Rig. Built in Chicago.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
